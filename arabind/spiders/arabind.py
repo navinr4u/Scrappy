@@ -14,11 +14,11 @@ class AraBind(scrapy.Spider):
 		fishes = response.xpath('//div[@class="row"]')
 		for fish in fishes:
 			name = fish.xpath('.//div[@class="prod-label"]/a/text()').extract_first()
-			price = fish.xpath('.//div[@class="price-label"]/script/text()').extract_first().lstrip("document.write(").rstrip(".toFixed(2));")
+			# price = fish.xpath('.//div[@class="price-label"]/script/text()').extract_first().lstrip("document.write(").rstrip(".toFixed(2));")
 		   # currency_per_unit = fish.xpath('.//div[@class="rate"]/text()').extract_first().replace('\r\n','').strip().replace(' ','')
 		   # yield { 'name': name, 'price': price + " " + currency_per_unit}
-			yield { 'name': name, 'price': price }
-
+			#yield { 'name': name, 'price': price }
+            yield { 'name': name, 'price': price }
 
 
 #<div class="rate"><script>document.write(69.9.toFixed(2));</script> AED 
