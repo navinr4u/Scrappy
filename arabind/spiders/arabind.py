@@ -18,7 +18,7 @@ class AraBind(scrapy.Spider):
 		   # currency_per_unit = fish.xpath('.//div[@class="rate"]/text()').extract_first().replace('\r\n','').strip().replace(' ','')
 		   # yield { 'name': name, 'price': price + " " + currency_per_unit}
 			#yield { 'name': name, 'price': price }
-            yield { 'name': name, 'price': price }
+            yield { 'name': name}
 
 
 #<div class="rate"><script>document.write(69.9.toFixed(2));</script> AED 
