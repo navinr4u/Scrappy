@@ -11,7 +11,7 @@ class AraBind(scrapy.Spider):
 	]
 
 	def parse(self, response):
-		fishes = response.xpath('//div[@class="prod-container"]')
+		fishes = response.xpath('//div[@class="row"]')
 		for fish in fishes:
 			name = fish.xpath('.//div[@class="prod-label"]/a/text()').extract_first()
 			price = fish.xpath('.//div[@class="price-label"]/script/text()').extract_first().lstrip("document.write(").rstrip(".toFixed(2));")
